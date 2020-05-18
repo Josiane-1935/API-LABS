@@ -1,61 +1,49 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <title>Greeter</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <?php if( $_GET["greet"] == "yes"): ?>
-
-      <div class="flex mx-auto justify-center">
+<head>
+<link rel="stylesheet" href="greeter.css">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="flex mx-auto justify-center">
         <img class="w-1/4" src="greeter.gif" alt="">
-      </div>
-
-      <div class="flex mx-auto rounded w-1/4 items-center justify-center bg-blue-500 text-white text-lg text-center font-bold px-4 py-3 top-3" role="alert">
+  </div>
+  <div class="flex mx-auto rounded w-1/4 items-center justify-center bg-blue-500 text-white text-lg text-center font-bold px-4 py-3 top-3" role="alert">
 
         <svg class=" fill-current w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
           <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
         </svg>
         <p><?php //echo "Hello ".$_GET['msg']; ?></p>
 
-        <p class="text-center"><?="Hello ".$_GET['msg'];?></p>
+        <p class="text-center"><?="Hello ".$_POST['msg'];?></p>
 
       </div>
 
     <?php endif; ?>
-
     <div class="flex">
 
       <div class="mx-auto py-6">
-        <form action="process.php" method="GET" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div class="mb-12">
+<form method="post" action="process.php" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <h2>Salimia Me</h2>
+  <div class="mb-12">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="full-name">
               Name
             </label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="full-name" name="full-name" type="text" required placeholder="Please enter your full name" pattern="[A-Za-z ]{1,32}" title="Letters,only example {fname lname}">
           </div>
-
           <div class="mb-12">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
               Age
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" name="age" type="number" required placeholder="Please enter your age">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" name="age" type="number" required placeholder="Please enter your age" min="5" max="80" title="Must be only between 5 and 80">
           </div>
-
           <div class="mb-12">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
               Gender
             </label>
-            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="gender" name="gender" required>
-                <option value="">Please select</option>
-                <option value="f">Female</option>
-                <option value="m">Male</option>
-            </select>
+            <input type="radio" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="male" name="gender" required value="M" >Male
+            <input type="radio" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="female" name="gender" required value="F" >Female
           </div>
-
           <div class="flex items-center justify-between">
             <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline inline-flex" type="submit">
               <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -63,12 +51,26 @@
               </svg>
               <span>Salimia Me</span>
             </button>
-
           </div>
-        </form>
+        </div>
       </div>
+<!--<div id="my_form" >
+<div id="age">
+<label for="age">Age: </label>
+<input type="number" id="age" name="age" min="5" max="80" required>
+</div>
+<div id="gender">
+<label for="gender"> Gender: </label>
+<input type="radio" id="male" name="gender" value="M">Male
+<input type="radio" id="female" name="gender" value="F">Female
+</div>
+<div id="button">
+<input type="submit" name="submit" value="Salimia me">
+</div>
+</div>
+</form>-->
 
-    </div>
-  </body>
 
+
+</body>
 </html>

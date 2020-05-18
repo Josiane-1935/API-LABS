@@ -18,10 +18,13 @@ if($space_position == false){
 
 #echo $age;
 $greeting = $first_name;
-if($age <= 12){
+if($age <= 12 and $gender="m"){
   //redirecting you to another page in PHP
   header("Location:index.php?msg=Child, ${greeting}&greet=yes");
-}else if($age >= 13 and $age <= 19){
+}elseif ($age <= 12 and $gender="f") {
+  header("Location:index.php?msg=Childish, ${greeting}&greet=yes");
+}
+else if($age >= 13 and $age <= 19){
   header("Location:index.php?msg=Teenie, ${greeting}&greet=yes");
 }else if($age >= 20 and $age <= 30){
   header("Location:index.php?msg=Yout, ${greeting}&greet=yes");

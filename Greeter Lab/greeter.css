@@ -1,0 +1,26 @@
+body
+{
+  font-family:Times New Roman;
+  font-size: 30px;
+}
+#my_form
+{
+  background-color: lightblue;
+  text-align: center;
+  border-style: groove;
+  margin: 100px 550px 100px 550px; /* top right bottom left */
+  height: 250px;
+  width: 25%;
+}
+input[type=number]
+{
+  width: 210px;
+  margin: 5px;
+  padding: 5px;
+  display: inline-block;
+  text-align: right;
+}
+h2
+{
+  text-align: center;
+}
