@@ -1,7 +1,9 @@
 <?php
-#var_dump($_GET); #superglobal(forms) -- update/create
-#die(); stops execution here
-$all_name = $_GET['full-name'];
+var_dump($_GET); #superglobal(forms) -- update/create
+
+#stops either
+#die();
+$all_name = $_REQUEST['full-name'];
 $age = $_GET['age'];
 $gender = $_GET['gender'];
 
@@ -16,13 +18,10 @@ if($space_position == false){
 
 #echo $age;
 $greeting = $first_name;
-if($age <= 12 and $gender="m"){
+if($age <= 12){
   //redirecting you to another page in PHP
   header("Location:index.php?msg=Child, ${greeting}&greet=yes");
-}elseif ($age <= 12 and $gender="f") {
-  header("Location:index.php?msg=Childish, ${greeting}&greet=yes");
-}
-else if($age >= 13 and $age <= 19){
+}else if($age >= 13 and $age <= 19){
   header("Location:index.php?msg=Teenie, ${greeting}&greet=yes");
 }else if($age >= 20 and $age <= 30){
   header("Location:index.php?msg=Yout, ${greeting}&greet=yes");

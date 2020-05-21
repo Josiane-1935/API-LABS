@@ -29,8 +29,8 @@
       </div>
       <div class="form-group col-lg-5">
         <label for="gender">Gender :</label>
-        <input type="radio" name="gender" id="male" value="m" required/>male
-        <input type="radio" name="gender" id="female" value="f" required/>Female
+        <input type="radio" name="gender" id="male" value="m" >male
+        <input type="radio" name="gender" id="female" value="f" >Female
       </div>
       <div class="form-group col-lg-5">
         <button type="submit" class="btn btn-primary" name="submit" id="submit">
@@ -39,9 +39,12 @@
           </svg>
           <span>Salimia Me</span>
 
+
         </button>
       </div>
+       <div>
 
+       </div>
     </form>
   </div>
   </div>
