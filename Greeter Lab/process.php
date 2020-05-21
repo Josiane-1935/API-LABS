@@ -14,8 +14,13 @@ if ($space_position == false)
 $greeting=$fname;
 if ($age <= 12 and $gender='m')
 {
-   header("Location: index.php");
-   echo "hello child";
+   //header("Location: index.php");
+   $output="hello child ${greeting}";
+   echo $output;
+}
+else {
+  $output="hello mzito ${greeting} ";
+  echo $output;
 }
 
 

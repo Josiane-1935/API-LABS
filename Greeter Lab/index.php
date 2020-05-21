@@ -11,9 +11,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="container border border-primary mx-auto m-5 pb-5  shadow-lg p-4 mb-4 bg-white">
-    <span><h2>Salimia Me</h2><span>
-
+  <div class="container border border-primary mx-auto m-5 pb-5 ">
+    <div class="panel panel-primary ">
+      <div class="panel-heading" align="center">
+      hello
+      </div>
+      <span><h2>Salimia Me</h2><span>
+      <div class="panel-body">
     <form method="POST" action="process.php">
       <div class="form-group col-lg-5">
         <label for="name">Name :</label>
@@ -39,6 +43,10 @@
       </div>
 
     </form>
+  </div>
+  </div>
+</div>
+
 
 
 </body>
