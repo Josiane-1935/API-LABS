@@ -23,13 +23,25 @@ saveInCookie([$first_name,$gender]);
 
 #echo $age;
 $greeting = $first_name;
-if($age <= 12){
+if($age <= 12 and $gender=='f'){
   //redirecting you to another page in PHP
   header("Location:index.php?msg=Child, ${greeting}&greet=yes");
-}else if($age >= 13 and $age <= 19){
+}else if($age <= 12 and $gender=='m'){
+  header("Location:index.php?msg=ChildMan, ${greeting}&greet=yes");
+}
+else if($age >= 13 and $age <= 19 and $gender=='f'){
   header("Location:index.php?msg=Teenie, ${greeting}&greet=yes");
-}else if($age >= 20 and $age <= 30){
+}
+else if($age >= 13 and $age <= 19 and $gender=='m'){
+    header("Location:index.php?msg=TeeniMan, ${greeting}&greet=yes");
+}else if($age >= 20 and $age <= 30 and $gender=='f'){
   header("Location:index.php?msg=Yout, ${greeting}&greet=yes");
-}else{
+}else if($age >= 20 and $age <= 30 and $gender=='m'){
+  header("Location:index.php?msg=YoutMan, ${greeting}&greet=yes");
+}
+else if($age >30 and $gender=='f'){
+  header("Location:index.php?msg=MyWoman, ${greeting}&greet=yes");
+}
+else{
   header("Location:index.php?msg=Mzito, ${greeting}&greet=yes");
 }
