@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'process.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@ session_start();
   <h2>Salimia Me</h2>
 <div id="name">
   Name:
-  <input type="text" name="name" required placeholder="Enter Your Name" pattern="[A-Za-z]{3,30}" title="Can have less than or 30 letters and no numbers" />
+  <input type="text" name="name" required placeholder="Enter Your Name" pattern="[A-Za-z ]{3,30}" title="Can have less than or 30 letters and no numbers" />
 </div>
 <div id="age">
 <label for="age">Age: </label>
@@ -30,7 +31,33 @@ session_start();
 </div>
 </form>
 </div>
-<div id="ta"
+<div id="MyTable">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      if(isset($_COOKIE["greeter"]))
+      {
+        $array=explode(",",$_COOKIE["greeter"]);
+        $name=$array[0];
+        $gender=$array[1];
+      }
+        foreach ($array as $row):
+      ?>
+      <tr>
+        <td><?= $row[0]; ?></td>
+
+      </tr>
+<?php endforeach; ?>
+    </tbody>
+  </table>
+
+</div>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script type="text/javascript">

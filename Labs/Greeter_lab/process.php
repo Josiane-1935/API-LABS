@@ -6,7 +6,17 @@ if (isset($_POST['submit'])) {
   $_SESSION["age"] = $_POST['age'];
   $_SESSION["name"]=$_POST['name'];
   $_SESSION["gender"] = $_POST['gender'];
-  $greeting=$_SESSION["name"];
+  $greeting=$_POST['name'];
+  $gender=$_POST['gender'];
+  setcookie("greeter",$greeting . "," . $gender);
+  if(isset($_COOKIE["greeter"]))
+  {
+    $array=explode(",",$_COOKIE["greeter"]);
+    $name=$array[0];
+    $gender=$array[1];
+    header("Location: greeter.php,$gender,$name");
+  }
+
 
   if ($_SESSION["age"] <= 12 && $_SESSION["gender"]=="M") {
     //$msg="Child";
