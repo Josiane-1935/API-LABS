@@ -1,5 +1,6 @@
 <?php
 
+use \src\Models\Store as Thito;
 class Student{
   //class body
 
@@ -12,10 +13,17 @@ class Student{
   //within the class and to [child classes] : inheritance
   protected $age;
 
+  public $store;
+
   #special methods
   #this is the constructor
   function __construct(){
-    echo "Instantiated";
+    //echo "Instantiated";
+    $this->store = new Thito;
+  }
+  #get all the students
+  function getAllStudents(){
+    return $this->store->getAll();
   }
 
   static function getTotalStudents(){

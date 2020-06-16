@@ -3,7 +3,7 @@
 #do classes have access modifiers in php
 
 #packages
-namespace OOP\Classing;
+namespace OOP\Models;
 
 class Store{
 
