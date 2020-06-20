@@ -1,6 +1,14 @@
 <?php
 
-use \src\Models\Store as Thito;
+#logical grouping of my code.
+namespace src\Controllers;
+
+#the file with the class
+#require_once '../Models/Store.php';
+
+#aliasing
+use  \src\Models\Store as Thito;
+
 class Student{
   //class body
 
@@ -18,21 +26,21 @@ class Student{
   #special methods
   #this is the constructor
   function __construct(){
-    //echo "Instantiated";
-    $this->store = new Thito;
+    $this->store = new Thito();
   }
+
   #get all the students
   function getAllStudents(){
     return $this->store->getAll();
   }
 
   static function getTotalStudents(){
-    echo 172;
+    return (new Thito())->getCount();
   }
 
   #this is NOT a constructor
   function _construct(){
-    echo "Fake Instantiated";
+    //echo "Fake Instantiated";
   }
 
   #methods/behavior
@@ -41,24 +49,33 @@ class Student{
 
   }
 
+  public function getDetails($index){
+    return $this->store->getOne($index);
+  }
+
   function gpa(){
     echo "your gpa";
   }
+
+  static function updateList($listOfStudents){
+    return (new Thito())->update($listOfStudents);
+  }
 }
-//denotes inheritance
-class StudentOnScholarship extends Student{
 
-}
+$perez = new Student();
+$api_2020_students = $perez->getAllStudents();
+#var_dump($api_2020_students);
+echo "<br>Total number of students : ".Student::getTotalStudents()."</br>";
 
+$myra = new Student();
+$details = $myra->getDetails(1);
+var_dump($details);
 
-#object creation
-#an actual student
-#instance of a class
-#the real person / student
-#(new Student())->gpa();
+$new_students = [
+  [104088,"Brian"],
+  [110201,"Angela"],
+  [110548,"Benjamin"]
+];
 
-$carlton = new Student();
-$carlton->gpa();
-
-#get students
-Student::getTotalStudents();
+Student::updateList($new_students);
+var_dump($perez->getAllStudents());
