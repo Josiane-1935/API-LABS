@@ -1,21 +1,18 @@
 <?php
-namespace Bookstore\Domain;
+namespace src\Domain;
 
-class Customer{
+
+//require_once '../Models/Person.php;
+//require_once __DIR__ . '/Person.php';
+
+class Customer extends Person {
   private $id;
-  private $firstname;
-  private $surname;
   private $email;
   private static $lastId = 0;
-
-  public function __contruct(
-    int $id,
-    string $firstname,
-    string $surname,
-    string $email
-    )
+  public function __construct(int $id, string $firstname, string $surname, string $email)
     {
-      if ($id == null){
+
+      if (empty($id)){
         $this->id = ++self::$lastId;
       }else {
         $this->id = $id;
@@ -23,26 +20,19 @@ class Customer{
           self::$lastId = $id;
         }
       }
-      $this->firstname = $firstname;
-      $this->surname = $surname;
       $this->email = $email;
+      parent::__contruct();
     }
-  public function getId() : int {
-    return $this->id;
-  }
   public static function getLastId() : int {
     return self::$lastId;
   }
-  public function getFirstname() : string {
-    return $this->firstname;
-  }
-  public function getSurname() : string {
-    return $this->surname;
+  public function getId() : int {
+    return $this->id;
   }
   public function getEmail() : string {
     return $this->email;
   }
-  public function setEmail(string $email){
+  public function setEmail($email) : string {
     $this->email = $email;
 
   }

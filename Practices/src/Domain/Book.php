@@ -1,5 +1,5 @@
 <?php
-namespace Bookstore\Domain;
+namespace src\Domain;
 
 class Book{
 
