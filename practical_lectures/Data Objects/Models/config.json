@@ -1,0 +1,7 @@
+{
+	"host" : "localhost",
+	"db" : "class_db(api)",
+	"username" : "root",
+	"password" : "",
+	"port" : "3306"
+}
