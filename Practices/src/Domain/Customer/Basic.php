@@ -2,7 +2,7 @@
 
 namespace src\Domain\Customer;
 
-use Bookstore\Domain\Customer;
+
 
 class Basic extends Customer {
   public function getMonthlyFee() : float {
