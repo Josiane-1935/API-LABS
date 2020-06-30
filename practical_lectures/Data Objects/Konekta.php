@@ -19,17 +19,17 @@ class Konekta{
       echo "Failed to connect to MySQL: " .$this->konn->connect_error;
       exit();
     }  else {
-      echo "connected successfully";
+      //echo "connected successfully";
     }
 
   }
   public function getConfig(){
-    $config_string = file_get_contents('config.json');
+    $config_relative_path='config.json';
+    $config_absolute_path =__DIR__.'/config.json';
+    $config_string = file_get_contents($config_absolute_path);
 
     $config_object = json_decode($config_string);
 
     $this->config = $config_object;
   }
 }
-$kn = new Konekta();
-$kn->getConfig();
