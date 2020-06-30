@@ -28,14 +28,18 @@ class Quote{
     $db = (new \Konekta()); // we add the slash if the file does not have a namespace
     $sql = "SELECT COUNT(*) as count FROM quote";
     $result = $db->konn->query($sql);
-    var_dump($result->fetch_row());
+    $row = $result->fetch_row();
+    echo $count = $row[0];
 
-    return (new \Konekta())
+    /*return (new \Konekta())
+                         ->konn
+                         ->query("SELECT COUNT(*) as count FROM quote")
+                         ->fetch_row()[0];*/
 
   }
 }
 
 $first_quote = new Quote();
-$bad_id = "12 OR '1 = 1'";
-//$first_quote->getQuote($bad_id);
+$good_id = " 1";
+//$first_quote->getQuote($good_id);
 Quote::getCount();

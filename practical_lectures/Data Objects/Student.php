@@ -15,7 +15,7 @@ class Student{
     R::setup('mysql:host=localhost;dbname=class_db(api)', 'root','');
 
     //create schema if it does not exist
-    if(countR::find('student') == 0){
+    if(count(R::find('student')) == 0){
       $this->_init();
     }
 
@@ -24,7 +24,7 @@ class Student{
   private function _init(){
     $student = R::dispense('student');
     $student->admNo = 112657;
-    $tudent->name = "Grace Muthengi";
+    $student->name = 'Muthengi Grace';
     R::store($student);
   }
   public function getStudents($id){
@@ -34,4 +34,4 @@ class Student{
 
 }
 $test = new Student();
-echo $test->getStudents(1);
+echo $test->getStudents(1)->name;
