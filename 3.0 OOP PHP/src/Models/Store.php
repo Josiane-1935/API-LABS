@@ -1,5 +1,7 @@
 <?php
 
+#packages
+//namespace OOP\Models;
 /**
 SERIOUSPROJ
  -> Storing stuff in the DB (Database) : Models

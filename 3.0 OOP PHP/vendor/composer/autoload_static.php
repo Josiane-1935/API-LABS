@@ -11,14 +11,14 @@ class ComposerStaticInit7b38ba5044b6546c59602c29125b9c49
     );
 
     public static $prefixLengthsPsr4 = array (
-        'L' => 
+        'L' =>
         array (
             'League\\Csv\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'League\\Csv\\' => 
+        'League\\Csv\\' =>
         array (
             0 => __DIR__ . '/..' . '/league/csv/src',
         ),
