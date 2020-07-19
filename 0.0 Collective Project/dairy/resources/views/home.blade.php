@@ -1,8 +1,9 @@
-@extends('example2/layout')
+@extends('layout')
 
 @section('title')
-    Animals
+Home
 @endsection
+
 @section('content')
 
     <div class="row">
@@ -10,7 +11,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">View All Animals</h3>
+                    <h3 class="card-title">Welcome</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -20,7 +21,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    This is the animals page
+                   This is the home page
                 </div>
 
             </div>
