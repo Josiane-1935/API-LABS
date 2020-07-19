@@ -10,20 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//return a view
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('home', function () {
-    echo "<h1>I think I get it!</h1>";
+    return view('example1/home');
+});
+//return a controller
+Route::get('breeds','BreedController@getAll');
+/*//return a string
+Route::get('home', function () {
+    //echo "<h1>I think I get it!</h1>";
     //return ["name"=>"josy"];
+    return view('example1/home');
 });
-Route::get('test', function(){
-    return view('test', ['name'=> request ('name')
-    ]);
+//Route::get('test', function(){
+    //return view('test', ['name'=> request ('name')];
+  //  ]);
 
-});
-/*
+//});
+
+
 Route::get('/posts/{post}', function($post){
    //return $post;
     $posts = [
@@ -39,6 +47,6 @@ Route::get('/posts/{post}', function($post){
             'post' => $posts[$post]
         ]);
     }
-}); */
-
-Route::get('/posts/{post}', 'PostsController@show');
+});
+//load a controller method
+Route::get('/posts/{post}', 'PostsController@show');*/

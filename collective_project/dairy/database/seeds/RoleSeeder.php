@@ -14,27 +14,41 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        //Admin
-        db::table('roles')->insert([
-          'name' => 'admin',
-          'description' => 'Administrator',
-          'created_at' => now(),
-          'updated_at' => now()
+        //admin user
+        DB::table('roles')->insert([
+            'name' => 'admin',
+            'description' => 'Administrator',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
-        //manage
-        db::table('roles')->insert([
-          'name' => 'manager',
-          'description' => 'manager',
-          'created_at' => now(),
-          'updated_at' => now()
+        //manager
+        DB::table('roles')->insert([
+            'name' => 'manager',
+            'description' => 'Manager',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
-        //user
-        db::table('roles')->insert([
-          'name' => 'user',
-          'description' => 'user',
-          'created_at' => now(),
-          'updated_at' => now()
+        //casual
+        DB::table('roles')->insert([
+            'name' => 'labourer',
+            'description' => 'Labourer',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
-
+        //customer
+        DB::table('roles')->insert([
+            'name' => 'customer',
+            'description' => 'Customer',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        //societies
+        DB::table('roles')->insert([
+            'name' => 'dairy-coop',
+            'description' => 'Dairy Cooperative',
+            'isOrganization' => true,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }
