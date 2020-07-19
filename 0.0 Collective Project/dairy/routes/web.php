@@ -24,15 +24,44 @@
  * facade (front side of a building)
  */
 
+//return a view
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('home', function () {
-  echo "<h1>I think I get it!!!</h1>";
+  return view('example1/home');
 });
 
+Route::get('animals', function () {
+    $animals = [
+        'cow1' => 'ddd',
+        'cow2' => 'eee'
+    ];
+    return view('example1/animals',['data' => $animals]);
+});
+
+
+//example 2
+
+Route::get('home2', function () {
+    return view('example2/home');
+});
+
+Route::get('animals2', function () {
+    $animals = [
+        'cow1' => 'ddd',
+        'cow2' => 'eee'
+    ];
+    return view('example2/animals',['data' => $animals]);
+});
+
+
+//return some string
 Route::get('about', function () {
   echo "<h1>About</h1>";
 });
+
+//load a controller method
+Route::get('breeds','BreedController@getAll');
 
