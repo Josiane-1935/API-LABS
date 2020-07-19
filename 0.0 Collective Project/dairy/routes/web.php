@@ -24,11 +24,15 @@
  * facade (front side of a building)
  */
 
-//return a view
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+
+
+
+
+/*
 Route::get('home', function () {
   return view('example1/home');
 });
@@ -65,3 +69,4 @@ Route::get('about', function () {
 //load a controller method
 Route::get('breeds','BreedController@getAll');
 
+*/
