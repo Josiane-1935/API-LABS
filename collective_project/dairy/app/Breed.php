@@ -4,20 +4,34 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Breed
+ *
+ * @property int $breedId
+ * @property string $name
+ * @property string $origin
+ * @property int $animalTypeId
+ * @property string $photo
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereAnimalTypeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereBreedId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereOrigin($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed wherePhoto($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Breed whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Breed extends Model
 {
-    //properties
-    protected $table ='breeds';
+    protected $table = 'breeds';
     protected $primaryKey = 'breedId';
 
-    //methods
-    //a breed has only one animalType
-    public function animaltype()
-    {
-      $this->belongsTo('App\AnimalType','animalTypeId','animalTypeId');
-    }
-    //a breed has many animals: one breed has many animals ie on a plusieurs animaux de la meme race
     public function animals(){
-      $this->hasMany('App\Animal');
+        $this->hasMany('App\Animal','breedId','breedId');
     }
 }

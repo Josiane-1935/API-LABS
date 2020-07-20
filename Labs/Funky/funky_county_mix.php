@@ -68,7 +68,7 @@ function update_array(&$value, $key)
   {
     $county_details_fix=explode("-", $county_details[1]);
     unset($county_details[1]);
-    $county_details=array_merge($county_details,$county_details_fix);
+    //$county_details=array_merge($county_details,$county_details_fix);
   }
 
 

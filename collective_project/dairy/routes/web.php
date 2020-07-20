@@ -12,13 +12,26 @@
 */
 //return a view
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+/*
 Route::get('home', function () {
     return view('example1/home');
 });
+Route::get('animals', function () {
+    return view('example1/animals');
+});
+Route::get('home2', function () {
+    return view('example2/home');
+});
+Route::get('animals2', function () {
+    return view('example2/animals');
+});
 //return a controller
-Route::get('breeds','BreedController@getAll');
+Route::get('breeds','BreedController@getAll');*/
+
+//-----------------------------------------------------
+
 /*//return a string
 Route::get('home', function () {
     //echo "<h1>I think I get it!</h1>";
