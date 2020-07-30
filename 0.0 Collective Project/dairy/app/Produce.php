@@ -40,12 +40,10 @@ class Produce extends Model
     }
 
     public function interval(){
-        $this->belongsTo('App\Interval');
+        return $this->belongsTo('App\Interval');
     }
 
     public function user(){
-        $this->belongsTo('App\User');
-
-        $j = new Produce();
+        return $this->belongsTo('App\User');
     }
 }

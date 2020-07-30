@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+/**
+ * --------------- ANIMAL TYPE ----------------------
+ */
+Route::get('animals/type/all','AnimalTypeController@all');
 
 
 

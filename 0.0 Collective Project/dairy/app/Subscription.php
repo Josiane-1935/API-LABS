@@ -38,14 +38,14 @@ class Subscription extends Model
     protected $primaryKey = 'subscriptionId';
 
     public function payments(){
-        $this->hasMany('App\Payment','subscriptionId','subscriptionId');
+        return $this->hasMany('App\Payment','subscriptionId','subscriptionId');
     }
 
     public function user(){
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function termination(){
-        $this->belongsTo('App\Termination');
+        return $this->belongsTo('App\Termination');
     }
 }

@@ -28,6 +28,6 @@ class Termination extends Model
     protected $primaryKey = 'terminationId';
 
     public function subscriptions(){
-        $this->hasMany('App\Subscription','terminationId','terminationId');
+       return $this->hasMany('App\Subscription','terminationId','terminationId');
     }
 }

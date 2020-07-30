@@ -46,27 +46,27 @@ class User extends Model
     protected $primaryKey = 'userId';
 
     public function contacts(){
-        $this->hasMany('App\Contact','userId','userId');
+        return $this->hasMany('App\Contact','userId','userId');
     }
 
     public function payments(){
-        $this->hasMany('App\Payment','userId','userId');
+        return $this->hasMany('App\Payment','userId','userId');
     }
 
     public function produce(){
-        $this->hasMany('App\Produce','userId','userId');
+        return $this->hasMany('App\Produce','userId','userId');
     }
 
     public function role(){
-        $this->belongsTo('App\Role');
+        return $this->belongsTo('App\Role');
     }
 
     public function tokens(){
-        $this->hasMany('App\Token','userId','userId');
+        return $this->hasMany('App\Token','userId','userId');
     }
 
     public function subscriptions(){
-        $this->hasMany('App\Subscription','userId','userId');
+        return $this->hasMany('App\Subscription','userId','userId');
     }
 
 }
