@@ -30,6 +30,6 @@ class Feed extends Model
     protected $primaryKey = 'feedId';
 
     public function animal(){
-        $this->belongsTo('App\Animal');
+        return $this->belongsTo('App\Animal');
     }
 }

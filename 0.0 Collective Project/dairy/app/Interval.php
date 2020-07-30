@@ -32,6 +32,6 @@ class Interval extends Model
     protected $primaryKey = 'intervalId';
 
     public function produce(){
-        $this->hasMany('App\Produce','intervalId','intervalId');
+        return $this->hasMany('App\Produce','intervalId','intervalId');
     }
 }

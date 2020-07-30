@@ -30,6 +30,6 @@ class Role extends Model
     protected $primaryKey = 'roleId';
 
     public function users(){
-        $this->hasMany('App\User','roleId','roleId');
+        return $this->hasMany('App\User','roleId','roleId');
     }
 }

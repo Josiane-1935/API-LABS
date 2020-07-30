@@ -36,10 +36,10 @@ class Payment extends Model
     protected $primaryKey = 'paymentId';
 
     public function subscription(){
-        $this->belongsTo('App\Subscription');
+        return $this->belongsTo('App\Subscription');
     }
 
     public function user(){
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 }

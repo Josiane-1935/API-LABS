@@ -32,6 +32,10 @@ class Breed extends Model
     protected $primaryKey = 'breedId';
 
     public function animals(){
-        $this->hasMany('App\Animal','breedId','breedId');
+        return $this->hasMany('App\Animal','breedId','breedId');
+    }
+
+    public function atype(){
+        return $this->belongsTo('App\AnimalType');
     }
 }

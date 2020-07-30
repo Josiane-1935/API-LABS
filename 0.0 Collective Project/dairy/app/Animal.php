@@ -46,10 +46,10 @@ class Animal extends Model
     }
 
     public function feeds(){
-        $this->hasMany('App\Feed','animalId','animalId');
+        return $this->hasMany('App\Feed','animalId','animalId');
     }
 
     public function produce(){
-        $this->hasMany('App\Produce','animalId','animalId');
+        return $this->hasMany('App\Produce','animalId','animalId');
     }
 }
