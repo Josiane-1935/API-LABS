@@ -14,9 +14,10 @@ class AnimalTypeSeeder extends Seeder
     {
         DB::table('animalType')->insert([
             'name' => 'cow',
-            'photo' => 'uploads/cow.jfif',
+            'photo' => 'uploads/cow.png',
             'created_at' => now(),
             'updated_at' => now()
         ]);
+      
     }
 }

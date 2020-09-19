@@ -4,19 +4,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="icon" type="image/png" href="icon.png"/>
+  <link rel="icon" type="image/png" href="{{URL::to('icon.png')}}"/>
   <title>{{config('app.name')}} | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="example2/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{URL::to('example2/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{URL::to('example2/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="example2/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{URL::to('example2/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="favicon" type="image/png" href="icon.png" />
+  <!-- Google Font: Princess Sofia -->
+  <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="favicon" type="image/png" href="{{URL::to('icon.png')}}" />
+  <!-- Custom CSS -->
+  <link href="{{URL::to('css/style.css')}}" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-footer-fixed">
 <!-- Site wrapper -->
@@ -39,10 +46,10 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{URL::to('/')}}" class="brand-link">
-      <img src="milk.png"
+      <img src="{{URL::to('milk.png')}}"
            alt="{{config('app.name')}}"
            class="brand-image img-circle elevation-3"
-           style="opacity: .8">
+           style="...">
       <span class="brand-text font-weight-light">{{config('app.name')}}</span>
     </a>
 
@@ -51,7 +58,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="uploads/users/female.png" class="img-circle elevation-2" alt="User Image">
+          <img src="{{URL::to('uploads/users/female.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Josiane Mango (Role)</a>
@@ -72,31 +79,34 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users-cog"></i>
-              <p>
-                Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{URL::to('users')}}" class="nav-link @if(Request::is('users')) {{"active"}} @endif">
-                  <i class="nav-icon fas fa-users"></i>
+              <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-users-cog"></i>
                   <p>
-                    View All
+                      Users
+                      <i class="right fas fa-angle-left"></i>
                   </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{URL::to('roles')}}" class="nav-link @if(Request::is('roles')) {{"active"}} @endif">
-                  <i class="nav-icon fas fa-screwdriver"></i>
-                  <p>
-                    Roles
-                  </p>
-                </a>
-              </li>
-            </ul>
+              </a>
+              <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                      <a href="{{URL::to('users')}}" class="nav-link @if(Request::is('users')) {{"active"}} @endif">
+                          <i class="nav-icon fas fa-users"></i>
+                          <p>
+                              View All
+                          </p>
+                      </a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a href="{{URL::to('users')}}" class="nav-link @if(Request::is('users')) {{"active"}} @endif">
+                          <i class="nav-icon fas fa-screwdriver"></i>
+                          <p>
+                              Roles
+                          </p>
+                      </a>
+                  </li>
+
+              </ul>
           </li>
 
           <li class="nav-item">
@@ -156,7 +166,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> {{env('APP_VERSION')}}
     </div>
-    <strong>Copyright &copy; {{date('Y')}} <a href="#"> {{config('app.name')}}</a>.</strong>  All rights
+    <strong>Copyright &copy; {{date('Y')}} <a href="#"><span class="brand-text font-weight-light">{{config('app.name')}}</span></a>.</strong>  All rights
     reserved.
   </footer>
 
@@ -169,12 +179,14 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="example2/plugins/jquery/jquery.min.js"></script>
+<script src="{{URL::to('example2/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="example2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{URL::to('example2/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="example2/dist/js/adminlte.min.js"></script>
+<script src="{{URL::to('example2/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="example2/dist/js/demo.js"></script>
+<script src="{{URL::to('example2/dist/js/demo.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{URL::to('example2/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 </body>
 </html>

@@ -34,4 +34,7 @@ class Breed extends Model
     public function animals(){
         $this->hasMany('App\Animal','breedId','breedId');
     }
+    public function animalType(){
+      $this->belongsTo('App\AnimalType');
+    }
 }
