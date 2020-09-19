@@ -18,6 +18,19 @@ Route::get('/', function () {
 * -------------------ANIMAL TYPE-----------
 */
 Route::get('animals/type/all', 'AnimalTypeController@all');
+
+Route::get('animals/type/add', 'AnimalTypeController@add');
+
+Route::post('animals/type/store', 'AnimalTypeController@store');
+
+Route::get('animals/type/edit/{id}', 'AnimalTypeController@edit');
+
+Route::post('animals/type/update', 'AnimalTypeController@update');
+
+Route::get('animals/type/delete/{id}', 'AnimalTypeController@delete');
+
+
+
 /*
 Route::get('home', function () {
     return view('example1/home');

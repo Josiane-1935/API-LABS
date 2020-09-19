@@ -108,6 +108,14 @@
 
               </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="{{URL::to('/animals/type/all')}}" class="nav-link @if(Request::is('/animals/type/all')) {{"active"}} @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Animal Types
+              </p>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a href="{{URL::to('animals')}}" class="nav-link @if(Request::is('animals')) {{"active"}} @endif">
@@ -133,6 +141,7 @@
               </p>
             </a>
           </li>
+        </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -182,11 +191,17 @@
 <script src="{{URL::to('example2/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{URL::to('example2/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+@yield("scripts")
 <!-- AdminLTE App -->
 <script src="{{URL::to('example2/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{URL::to('example2/dist/js/demo.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{URL::to('example2/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+
+
+
+
 </body>
 </html>

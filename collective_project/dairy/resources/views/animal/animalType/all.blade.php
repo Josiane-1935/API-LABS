@@ -11,8 +11,17 @@
          <!-- Default box -->
 
            <div class="card">
+             @if (session('status'))
+               <div class="alert alert-success">
+                 {{ session('status')}}
+               </div>
+             @endif
              <div class="card-header">
                <h3 class="card-title">All Animal Types</h3>
+
+               <div class="card-tools">
+                 <a href="{{URL::to('/animals/type/add')}}" class="btn btn-primary small btn-sm"> <span style="color:white;">Add<i class="fas fa-plus"></span></i></a>
+               </div>
 
 
              </div>
@@ -36,9 +45,9 @@
                      <td align="center"><img class="rounded img-fluid img-thumbnail" style="width:20%" src="{{URL::to($type->photo)}}" alt="{{ucwords($type->name)}}" ></td>
                      <td><span class="badge bg-purple">{{count($type->breeds)}}</span></td>
                      <td>
-                       <a href="#" class="fas fa-edit" title="Edit {{ucwords($type->name)}}">
+                       <a href="{{URL::to('animals/type/edit')}}{{'/'.$type->animalTypeId}}" class="fas fa-edit" title="Edit {{ucwords($type->name)}}">
 
-                       <a href="#" class="fas fa-trash" title="Delete {{ucwords($type->name)}}">
+                       <a href="{{URL::to('animals/type/delete')}}{{'/'.$type->animalTypeId}}" class="fas fa-trash" title="Delete {{ucwords($type->name)}}">
                      </td>
                    </tr>
                    @endforeach

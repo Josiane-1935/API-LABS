@@ -18,11 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->integer('nationalId')->unique()->nullable();
+            $table->string('gender');
             $table->integer('empId')->unique()->nullable();
             $table->text('photo');
             $table->date('dob');
-            $table->string('nssf');
-            $table->string('nhif');
+            $table->string('nssf')->nullable();
+            $table->string('nhif')->nullable();
             $table->text('password');
             $table->unsignedBigInteger('roleId');
             $table->foreign('roleId')->references('roleId')->on('roles');

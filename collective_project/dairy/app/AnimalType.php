@@ -26,6 +26,7 @@ class AnimalType extends Model
 {
     protected $table = 'animalType';
     protected $primaryKey = 'animalTypeId';
+    protected $fillable = ['name', 'photo'];
 
     public function breeds(){
       return $this->hasMany('App\Breed','animalTypeId', 'animalTypeId');
