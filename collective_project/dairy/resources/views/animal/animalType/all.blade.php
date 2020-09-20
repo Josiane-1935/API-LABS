@@ -45,9 +45,9 @@
                      <td align="center"><img class="rounded img-fluid img-thumbnail" style="width:20%" src="{{URL::to($type->photo)}}" alt="{{ucwords($type->name)}}" ></td>
                      <td><span class="badge bg-purple">{{count($type->breeds)}}</span></td>
                      <td>
-                       <a href="{{URL::to('animals/type/edit')}}{{'/'.$type->animalTypeId}}" class="fas fa-edit" title="Edit {{ucwords($type->name)}}">
+                       <a href="{{URL::to('animals/type/edit')}}{{'/'.$type->animalTypeId}}" class="fas fa-edit" title="Edit {{ucwords($type->name)}}"></a>
 
-                       <a href="{{URL::to('animals/type/delete')}}{{'/'.$type->animalTypeId}}" class="fas fa-trash" title="Delete {{ucwords($type->name)}}">
+                       <a data-title="Are you sure you want to delete this?" href="{{URL::to('animals/type/delete')}}{{'/'.$type->animalTypeId}}" class="fas fa-trash delBtn" title="Delete {{ucwords($type->name)}}"></a>
                      </td>
                    </tr>
                    @endforeach
@@ -63,5 +63,21 @@
          <!-- /.card -->
        </div>
      </div>
+
+@endsection
+
+@section('scripts')
+  <script src="{{URL::to('example2/plugins/jquery-confirm/dist/jquery-confirm.min.js')}}"></script>
+  <script type="text/javascript">
+      $('a.delBtn').confirm({
+         content: "...",
+      });
+      
+
+  </script>
+@endsection
+
+@section('styles')
+  <link rel="stylesheet" href="{{URL::to('example2/plugins/jquery-confirm/dist/jquery-confirm.min.css')}}">
 
 @endsection

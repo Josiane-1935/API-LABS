@@ -82,4 +82,14 @@ class AnimalTypeController extends Controller
       }
 
     }
+
+    public function delete($id, Request $request)
+    {
+      $animalType = AnimalType::findOrFail($id);
+
+      $animalType->delete();
+
+      return redirect ('animals/type/all')->with('status', 'Animal Type deleted!');
+
+    }
 }

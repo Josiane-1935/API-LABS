@@ -24,6 +24,7 @@
   <link rel="favicon" type="image/png" href="{{URL::to('icon.png')}}" />
   <!-- Custom CSS -->
   <link href="{{URL::to('css/style.css')}}" rel="stylesheet">
+  @yield('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-footer-fixed">
 <!-- Site wrapper -->
